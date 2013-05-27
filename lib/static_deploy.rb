@@ -1,5 +1,5 @@
 require "static_deploy/version"
 
-module StaticDeploy
-  # Your code goes here...
+if defined?(Rake)
+  Rake.load_rakefile(File.expand_path('../static_deploy/publish_task.rb', __FILE__))
 end
