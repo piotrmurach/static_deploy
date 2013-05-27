@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = StaticDeploy::VERSION
   spec.authors       = ["Piotr Murach"]
   spec.email         = ["pmurach@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Automated deployment to GitHub pages}
+  spec.summary       = %q{Provides rake tasks for publishing your static site to github pages to any remote repository}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -17,6 +17,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "tty"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
