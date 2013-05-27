@@ -1,6 +1,6 @@
 # StaticDeploy
 
-TODO: Write a gem description
+Provides rake tasks for publishing your static website to GitHub pages of any remote repository.
 
 ## Installation
 
@@ -18,7 +18,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In your Rakefile add the following
+
+```ruby
+  require 'static_deploy'
+
+  ENV['GENERATOR'] = 'jekyll' # => static website generator executable
+  ENV['COMMAND']   = 'build'  # => defaults to 'build'
+```
+
+Then to publish to remote branch do
+
+```ruby
+  bundle exec rake publish["username/repository"]
+```
 
 ## Contributing
 
@@ -27,3 +40,7 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Copyright
+
+Copyright (c) 2013 Piotr Murach. See LICENSE for further details.
