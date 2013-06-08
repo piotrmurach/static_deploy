@@ -1,6 +1,6 @@
 # StaticDeploy
 
-Provides rake tasks for publishing your static website to GitHub pages of any remote repository.
+Provides rake tasks for publishing your static website via git to any remote repository(GitHub pages).
 
 ## Installation
 
@@ -24,7 +24,7 @@ In your Rakefile add the following
   require 'static_deploy'
 
   ENV['GENERATOR'] = 'jekyll' # => static website generator executable
-  ENV['COMMAND']   = 'build'  # => defaults to 'build'
+  ENV['COMMAND']   = 'build'  # => command for building a project, defaults to 'build'
 ```
 
 Then to publish to remote branch do
