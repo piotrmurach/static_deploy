@@ -27,10 +27,16 @@ In your Rakefile add the following
   ENV['COMMAND']   = 'build'  # => command for building a project, defaults to 'build'
 ```
 
-Then to publish to remote branch do
+If you are deploying inside current repository, git defaults are used to get username and repository name
 
 ```ruby
-  bundle exec rake publish["username/repository"]
+  bundle exec rake site:publish
+```
+
+Otherwise, to publish to remote branch on different repository do
+
+```ruby
+  bundle exec rake site:publish["username/repository"]
 ```
 
 ## Contributing
