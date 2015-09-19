@@ -26,6 +26,11 @@ def command
   @command = ENV['COMMAND'] || 'build'
 end
 
+def has_git?
+  sh "git --version"
+  $?.success?
+end
+
 namespace :site do
   desc "Prepare remote branch"
   task :prepare do |t, args|
