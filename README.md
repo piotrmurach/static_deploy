@@ -49,4 +49,4 @@ Otherwise, to publish to remote branch on different repository do
 
 ## Copyright
 
-Copyright (c) 2013 Piotr Murach. See LICENSE for further details.
+Copyright (c) 2013-2015 Piotr Murach. See LICENSE for further details.
