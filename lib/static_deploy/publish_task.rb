@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'fileutils'
 require 'tty'
 
@@ -33,7 +35,7 @@ end
 
 namespace :site do
   desc "Prepare remote branch"
-  task :prepare do |t, args|
+  task :prepare, [:repo] do |t, args|
     shell.say "=> Preparing...", color: :green
 
     mkdir_p BUILD_DIR
@@ -43,13 +45,21 @@ namespace :site do
         sh "git init"
         sh "git remote add github git@github.com:#{args.repo}.git"
         sh "git fetch github"
-        sh "git checkout -b gh-pages --track github/gh-pages"
+        `git ls-remote --exit-code git@github.com:#{args.repo}.git gh-pages`
+        if $?.success?
+          sh "git checkout -b gh-pages --track github/gh-pages"
+        else
+          `echo "text" > sample.txt`
+          sh "git add sample.txt"
+          sh "git commit -am 'Sample text'"
+          sh "git checkout --orphan gh-pages"
+        end
       end
     end
   end
 
   desc "Fetch upstream changes on tty gh pages"
-  task :sync do
+  task :sync, [:repo] do |t, args|
     shell.say "=> Synching...", color: :green
 
     cd BUILD_DIR do
