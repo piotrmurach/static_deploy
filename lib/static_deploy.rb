@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require "static_deploy/version"
 
 if defined?(Rake)
