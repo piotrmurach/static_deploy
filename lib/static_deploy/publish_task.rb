@@ -58,7 +58,7 @@ namespace :site do
     end
   end
 
-  desc "Fetch upstream changes on tty gh pages"
+  desc "Fetch upstream changes on gh pages"
   task :sync, [:repo] do |t, args|
     shell.say "=> Synching...", color: :green
 
