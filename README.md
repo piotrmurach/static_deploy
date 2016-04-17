@@ -58,4 +58,4 @@ end
 
 ## Copyright
 
-Copyright (c) 2013-2015 Piotr Murach. See LICENSE for further details.
+Copyright (c) 2013-2016 Piotr Murach. See LICENSE for further details.
