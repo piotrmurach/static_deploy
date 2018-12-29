@@ -6,7 +6,7 @@
 [gem]: http://badge.fury.io/rb/static_deploy
 [travis]: http://travis-ci.org/piotrmurach/static_deploy
 
-> Rake tasks to publish your static website via git to a remote repository (eg. GitHub pages).
+> Rake tasks to ease publishing a static website via git to a remote repository (e.g. GitHub pages).
 
 ## Installation
 
@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ## Usage
 
-In your `Rakefile` add the following
+In `Rakefile` add the following:
 
 ```ruby
 require 'static_deploy'
@@ -33,19 +33,19 @@ ENV['GENERATOR'] = 'jekyll'  # => static website generator executable
 ENV['COMMAND']   = 'build'   # => command for building a project, defaults to 'build'
 ```
 
-If you are deploying inside current repository, git defaults are used to get username and repository name
+When deploying inside the current repository, git defaults are used to get username and repository name:
 
 ```ruby
 bundle exec rake site:publish
 ```
 
-Otherwise, to publish to remote branch on different repository do
+Otherwise, to publish to remote branch in the different repository do:
 
 ```ruby
 bundle exec rake site:publish["username/repository"]
 ```
 
-As a convenience you may wish to add the following rake task to your `Rakefile`
+As a convenience you may want to add the following rake task to your `Rakefile`:
 
 ```ruby
 desc 'publish this site'
