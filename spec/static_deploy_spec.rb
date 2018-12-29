@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe StaticDeploy do
-  it 'should have a version number' do
-    StaticDeploy::VERSION.should_not be_nil
+RSpec.describe StaticDeploy do
+  it 'has a version number' do
+    expect(StaticDeploy::VERSION).to_not be_nil
   end
 end
