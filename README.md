@@ -1,6 +1,12 @@
 # StaticDeploy
 
-Provides rake tasks for publishing your static website via git to any remote repository(GitHub pages).
+[![Gem Version](https://badge.fury.io/rb/static_deploy.svg)][gem]
+[![Build Status](https://secure.travis-ci.org/piotrmurach/static_deploy.svg?branch=master)][travis]
+
+[gem]: http://badge.fury.io/rb/static_deploy
+[travis]: http://travis-ci.org/piotrmurach/static_deploy
+
+> Rake tasks to publish your static website via git to a remote repository (eg. GitHub pages).
 
 ## Installation
 
