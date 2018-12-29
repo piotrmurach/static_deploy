@@ -1,5 +1,5 @@
-# encoding: utf-8
+# frozen_string_literal: true
 
 module StaticDeploy
-  VERSION = "0.2.0"
+  VERSION = "0.3.0"
 end
