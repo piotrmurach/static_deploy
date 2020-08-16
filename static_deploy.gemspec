@@ -17,11 +17,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.required_ruby_version = ">= 2.0.0"
 
-  spec.required_ruby_version = '>= 2.0.0'
+  spec.add_runtime_dependency "tty-prompt", "~> 0.22"
+  spec.add_runtime_dependency "rake"
 
-  spec.add_runtime_dependency 'tty-prompt', '~> 0.18'
-  spec.add_runtime_dependency 'rake'
-
-  spec.add_development_dependency 'bundler', '>= 1.5.0', '< 2.0'
-  spec.add_development_dependency 'rspec', '~> 3.1'
+  spec.add_development_dependency "rspec", ">= 3.0"
 end
