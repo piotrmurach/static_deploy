@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'fileutils'
-require 'tty-prompt'
+require "fileutils"
+require "tty-prompt"
 
 BUILD_DIR   = "_site"
 ROOT        = `git rev-parse --show-toplevel`.strip
@@ -21,11 +21,11 @@ def default_repo
 end
 
 def generator
-  @generator = ENV['GENERATOR'] || 'jekyll'
+  @generator = ENV["GENERATOR"] || "jekyll"
 end
 
 def command
-  @command = ENV['COMMAND'] || 'build'
+  @command = ENV["COMMAND"] || "build"
 end
 
 def has_git?
@@ -79,7 +79,7 @@ namespace :site do
     end
   end
 
-  desc 'Publish the website to GitHub pages'
+  desc "Publish the website to GitHub pages"
   task :publish, [:repo] => [:prepare, :sync, :build] do |t, args|
     args.with_defaults(:repo => "#{default_user}/#{default_repo}")
 
@@ -90,7 +90,7 @@ namespace :site do
     prompt.ok "=> Deploying to #{args.repo} GitHub Pages..."
 
     cd BUILD_DIR do
-      sh 'git add --all'
+      sh "git add --all"
       if /nothing to commit/ =~ `git status`
         prompt.ok "No changes to commit."
       else
